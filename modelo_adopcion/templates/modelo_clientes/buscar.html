@@ -1,0 +1,33 @@
+{% extends "modelo_clientes/inicio.html" %}
+
+{%load static%}
+
+{%block contenidoquecambia%}
+
+
+<div>
+    <form action="" method="get">
+        <label for="nombre_mascota">Buscar Mascota:</label>
+        <input type="text" id="nombre_mascota" name="nombre">
+        <button type="submit">Buscar</button>
+    </form>
+</div>
+
+{%if mascotas%}
+
+<p>estamos buscando el: {{nombre}}</p>
+
+
+<ul>
+{%for mascota in mascotas%}
+<li> {{mascota.nombre}}</li>
+<li> {{mascota.animal}}</li>
+{% endfor %}
+</ul>
+{%else%}
+<p>no hay datos con esta descripcion</p>
+{%endif%}
+
+<p>{{respuesta}}</P>
+
+{%endblock contenidoquecambia%}
