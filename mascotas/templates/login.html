@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{%load static%}
+
+{%block contenidoquecambia%}
+
+<h1>login</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+        {{form.as_p}}
+    <button type="submit">iniciar sesion</button>
+</form>
+{% if mensja%}
+<p>
+    {{"mensaje"}}
+</p>
+{% endif %}
+
+
+{%endblock contenidoquecambia%}

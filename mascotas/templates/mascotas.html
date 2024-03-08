@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block contenidoquecambia %}
+
+<h1>Lista de Mascotas Postuladas</h1>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    {% for mascota in mascotas %}
+    <div style="flex: 0 1 calc(33.33% - 20px); background-color: #f0f0f0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px;">
+        <div style="display: flex; align-items: center;">
+            {% if mascota.imagen %}
+            <img src="{{ mascota.imagen.url }}" alt="Imagen de {{ mascota.nombre }}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;">
+            {% endif %}
+            <div style="margin-left: 20px;">
+                <h2>Nombre: {{ mascota.nombre }}</h2>
+                <p>Animal: {{ mascota.animal }}</p>
+                <p>Fecha de Nacimiento: {{ mascota.fecha_nacimiento }}</p>
+                <p>Información Adicional: {{ mascota.informacion_adicional }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock contenidoquecambia %}

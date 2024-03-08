@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{%load static%}
+
+{%block contenidoquecambia%}
+
+<h1>Crear Mascota</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Crear Mascota</button>
+</form>
+
+{%endblock contenidoquecambia%}
